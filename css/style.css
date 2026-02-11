@@ -59,7 +59,7 @@ main {
 .image-section {
     width: 100%;
     min-height: 30vh;
-    background: #0077b6;
+    background: #61881c;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,7 +76,7 @@ main {
     width: 100%;
     min-height: 70vh;
     background: #e9ecef;
-    padding: 20px 0;
+    padding: 15px;
 }
 
 .form-section form {
@@ -88,58 +88,189 @@ form {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 0 0 5px 0;
 }
 
 form h1 {
+    line-height: 1;
     font-size: 2.5rem;
     font-weight: bold;
 }
-/* 
+
+/* Inputs field */
+
 .input-field {
     position: relative;
     width: 100%;
-    padding: 0 30px;
+    padding: 10px 30px;
 }
+
+
+/* Input */
 
 .input-field input {
     width: 100%;
-    padding: 10px 10px;
-    border-radius: 12px;
-    border: 2px solid #d3d9df;
+    font-size: 1.125rem;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #98a6b4;
     background: transparent;
-    font-size: 1rem;
-    color: #222;
+    color: #000;
+    font-weight: 400;
 }
+
+/* Icon */
 
 .input-field i {
     position: absolute;
-    right: 48px;
+    right: calc(30px + 15px);
     top: 50%;
     transform: translateY(-50%);
-    color: #3f5efb;
-    font-size: 1.1rem;
+    color: #98a6b4;
     pointer-events: none;
 }
 
+/* Labe */
+
 .input-field label {
     position: absolute;
+    left: calc(30px + 20px);
     top: 50%;
-    left: 48px;
-    transform: translateY(-10%);
-    padding: 0;
-    font-size: 0.9rem;
-    color: #3f5efb;
+    transform: translateY(-140%);
+    color: #61881c;
     background: #e9ecef;
     pointer-events: none;
     transition: .3s ease;
 }
 
-.input-field input:focus+label,
-.input-field input:valid+label {
-    top: -8px;
-    font-size: 0.75rem;
+input:hover {
+    border: 1px solid transparent;
+    outline: 2px solid #61881c;
 }
 
 input:focus {
-    outline: 2px solid #3f5efb;
-} */
+    outline: 2px solid #61881c;
+}
+
+.input-field input:focus~i {
+    color: #61881c;
+}
+
+.input-options {
+    width: 100%;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    color: #98a6b4;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+/* Hidde real checkbox*/
+.checkbox input {
+    display: none;
+}
+
+/* Custom box */
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #98a6b4;
+    border-radius: 4px;
+    display: grid;
+    place-items: center;
+    transition: .2s ease;
+}
+
+/* Personalize check */
+.checkmark::after {
+    content: "✔";
+    font-size: 10px;
+    color: white;
+    display: none;
+}
+
+.checkbox input:checked+.checkmark {
+    background: #61881c;
+    border-color: #61881c;
+}
+
+.checkbox input:checked+.checkmark::after {
+    display: block;
+}
+
+.input-options a {
+    font-size: 0.95rem;
+    color: #61881c;
+}
+
+button {
+    width: 80%;
+    padding: 15px 0;
+    border: none;
+    background: #61881c;
+    border-radius: 10px;
+    color: #e9ecef;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.login-with {
+    text-align: center;
+    padding: 10px 30px;
+}
+
+.text {
+    position: relative;
+    right: inherit;
+    width: 100%;
+}
+
+.text .horizontal-line {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 1px;
+    background: #98a6b4;
+}
+
+.text span {
+    position: relative;
+    top: 50%;
+    background: #e9ecef;
+    padding: 0 10px;
+    color: #98a6b4;
+}
+
+.google-login {
+    padding: 10px 0;
+    width: 100%;
+}
+
+.google-login a {
+    display: block;
+    padding: 10px 0;
+    border: 1px solid #98a6b4;
+    border-radius: 15px;
+}
+
+.regiter {
+    display: inline-block;
+    width: 100%;
+    color: #98a6b4;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.regiter a {
+    color: #61881c;
+}
