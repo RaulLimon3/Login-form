@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 
-*::before, *::after {
+*::before,
+*::after {
     box-sizing: inherit;
 }
 
@@ -48,16 +49,97 @@ main {
     max-height: 1200px;
     margin: auto;
     background: #000;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 1fr;
 }
+
+/* Image section */
 
 .image-section {
     width: 100%;
     min-height: 30vh;
     background: #0077b6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.image-section img {
+    width: 40%;
+    filter: drop-shadow(10px 10px 20px #000);
+}
+
+/* Form section */
 
 .form-section {
     width: 100%;
     min-height: 70vh;
     background: #e9ecef;
+    padding: 20px 0;
 }
+
+.form-section form {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+/* 
+.input-field {
+    position: relative;
+    width: 100%;
+    padding: 0 30px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 12px;
+    border: 2px solid #d3d9df;
+    background: transparent;
+    font-size: 1rem;
+    color: #222;
+}
+
+.input-field i {
+    position: absolute;
+    right: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #3f5efb;
+    font-size: 1.1rem;
+    pointer-events: none;
+}
+
+.input-field label {
+    position: absolute;
+    top: 50%;
+    left: 48px;
+    transform: translateY(-10%);
+    padding: 0;
+    font-size: 0.9rem;
+    color: #3f5efb;
+    background: #e9ecef;
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+.input-field input:focus+label,
+.input-field input:valid+label {
+    top: -8px;
+    font-size: 0.75rem;
+}
+
+input:focus {
+    outline: 2px solid #3f5efb;
+} */
