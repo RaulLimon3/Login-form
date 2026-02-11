@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before, *::after {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lexend Deca", sans-serif;
+    line-height: 1.6;
+    background: #fff;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    width: 100%;
+    max-height: 1200px;
+    margin: auto;
+    background: #000;
+}
+
+.image-section {
+    width: 100%;
+    min-height: 30vh;
+    background: #0077b6;
+}
+
+.form-section {
+    width: 100%;
+    min-height: 70vh;
+    background: #e9ecef;
+}
