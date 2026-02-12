@@ -66,7 +66,7 @@ main {
 }
 
 .image-section img {
-    width: 40%;
+    width: 30%;
     filter: drop-shadow(10px 10px 20px #000);
 }
 
@@ -213,18 +213,24 @@ input:focus {
 button {
     width: 80%;
     padding: 15px 0;
-    border: none;
+    border: 1px solid transparent;
     background: #61881c;
     border-radius: 10px;
     color: #e9ecef;
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 1px;
+    transition: 0.3s all ease;
+}
+
+button:hover {
+    border: 1px solid transparent;
+    background: #719f21;
 }
 
 button:focus {
-    background: #719f21;
-    /* color: #d3d9df; */
+    background: #83b726;
+    color: #000;
 }
 
 .login-with {
@@ -265,6 +271,12 @@ button:focus {
     padding: 10px 0;
     border: 1px solid #98a6b4;
     border-radius: 15px;
+    transition: 0.3s all ease;
+}
+
+.google-login a:hover {
+    background: #fff;
+    border: 1px solid transparent;
 }
 
 .google-login a:focus {
@@ -273,13 +285,16 @@ button:focus {
 }
 
 .google-login a:focus .fa-google {
-    background: linear-gradient(
-        to bottom,
-        #4285F4 0% 25%,    /* Azul */
-        #EA4335 25% 50%,   /* Rojo */
-        #FBBC05 50% 75%,   /* Amarillo */
-        #34A853 75% 100%   /* Verde */
-    );
+    background: linear-gradient(to bottom,
+            #4285F4 0% 25%,
+            /* Azul */
+            #EA4335 25% 50%,
+            /* Rojo */
+            #FBBC05 50% 75%,
+            /* Amarillo */
+            #34A853 75% 100%
+            /* Verde */
+        );
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -296,4 +311,84 @@ button:focus {
 
 .regiter a {
     color: #61881c;
+}
+
+/* Responsive design */
+@media screen and (min-width: 768px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        min-height: 100vh;
+    }
+
+    .image-section img {
+        width: 50%;
+    }
+    
+    form {
+        width: 80%;
+        gap: 30px;
+    }
+
+    .form-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    .input-field {
+        padding: 10px 0;
+    }
+
+    .input-field i {
+        right: 15px;
+    }
+    
+    .input-field label {
+        left: 15px;
+    }
+
+    .input-options {
+        padding: 15px 0;
+    }
+
+    .checkbox {
+        font-size: 1.125rem;
+    }
+
+    .input-options a {
+        font-size: 1.125rem;
+    }
+
+    button {
+        width: 100%;
+        font-size: 1.125rem;
+    }
+
+    .login-with {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .text {
+        padding: 30px 0;
+    }
+
+    .text span {
+        font-size: 1.125rem;
+    }
+
+    .google-login {
+        padding: 10px 15px;
+    }
+
+    .google-login a {
+        font-size: 1.125rem;
+    }
+
+    .regiter {
+        font-size: 1.125rem;
+    }
 }
