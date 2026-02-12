@@ -222,6 +222,11 @@ button {
     letter-spacing: 1px;
 }
 
+button:focus {
+    background: #719f21;
+    /* color: #d3d9df; */
+}
+
 .login-with {
     text-align: center;
     padding: 10px 30px;
@@ -260,6 +265,24 @@ button {
     padding: 10px 0;
     border: 1px solid #98a6b4;
     border-radius: 15px;
+}
+
+.google-login a:focus {
+    background: #fff;
+    border: 1px solid transparent;
+}
+
+.google-login a:focus .fa-google {
+    background: linear-gradient(
+        to bottom,
+        #4285F4 0% 25%,    /* Azul */
+        #EA4335 25% 50%,   /* Rojo */
+        #FBBC05 50% 75%,   /* Amarillo */
+        #34A853 75% 100%   /* Verde */
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .regiter {
