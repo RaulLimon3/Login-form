@@ -16,22 +16,22 @@
 </head>
 
 <body>
-    <main>
+    <main class="main">
         <section class="image-section">
-            <img src="./public/img/Login-img.png" alt="">
+            <img class="image" src="./public/img/Login-img.png" alt="Login image">
         </section>
-        <section class="form-section">
-            <form action="#">
-                <h1>Login</h1>
+        <section class="container form-section">
+            <form action="#" id="form" class="form">
+                <h1 class="form-title">Login</h1>
                 <div class="input-field">
-                    <input type="text" name="username" id="username">
-                    <label for="username">Username</label>
-                    <i class="fa-solid fa-user"></i>
+                    <input class="input" type="text" name="username" id="username" autocomplete="username">
+                    <label class="label" for="username">Username</label>
+                    <i class="fa-solid fa-user icon"></i>
                 </div>
                 <div class="input-field">
-                    <input type="password" name="password" id="password">
-                    <label for="password">Password</label>
-                    <i class="fa-solid fa-lock"></i>
+                    <input class="input" type="password" name="password" id="password" autocomplete="current-password">
+                    <label class="label" for="password">Password</label>
+                    <i class="fa-solid fa-lock icon"></i>
                 </div>
                 <div class="input-options">
                     <label for="RememberMe" class="checkbox">
@@ -39,9 +39,9 @@
                         <span class="checkmark"></span>
                         Remember me
                     </label>
-                    <a href="#">Forgot Password?</a>
+                    <a href="#" class="forgot-password link">Forgot Password?</a>
                 </div>
-                <button type="submit">
+                <button type="submit" class="btn">
                     Login
                 </button>
             </form>
@@ -51,13 +51,13 @@
                     <span>Or login with</span>
                 </div>
                 <div class="google-login">
-                    <a href="#">
+                    <a href="#" class="google-link">
                         <i class="fa-brands fa-google"></i>
                         Login with Google
                     </a>
                 </div>
             </div>
-            <span class="regiter">Do you have already an account? <a href="#">Register</a></span>
+            <span class="register">Do you have already an account? <a href="#" class="link">Register</a></span>
         </section>
     </main>
 </body>
