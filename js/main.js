@@ -86,6 +86,13 @@ form.addEventListener('submit', (e) => {
     if (!validatePasswordInput(password)) return;
 
     console.log('Formulario enviado');
+
+    // Limpiamos el formulario
+    form.reset();
+    
+    // Limpiamos los errores
+    cleanError(userNameInput);
+    cleanError(passwordInput);
 });
 
 
