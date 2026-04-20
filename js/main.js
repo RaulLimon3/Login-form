@@ -13,15 +13,10 @@ const validateUserNameInput = () => {
     // Validamos que vacio
     if (username === '') {
         // Marcamos el campo
-        userNameInput.classList.add('input--danger');
-        // Mostramos mensaje
-        messageError.style.display = 'block';
-        messageError.textContent = 'Nombre de usuario requerido';
+        setError(userNameInput, 'Nombre de usuario requerido');
         return false;
     } else if (!regexUserName.test(username)) {      // Validamos el formato
-        userNameInput.classList.add('input--danger');
-        messageError.style.display = 'block';
-        messageError.textContent = 'Formato incorrecto';
+        setError(userNameInput, 'Formato incorrecto');
         return false;
     }
 
@@ -37,14 +32,10 @@ const validatePasswordInput = () => {
     const password = passwordInput.value.trim();
     const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{7,}$/;
     if (password === '') {
-        passwordInput.classList.add('input--danger');
-        messageError.style.display = 'block';
-        messageError.textContent = 'Contraseña requerida';
+        setError(passwordInput, 'Contraseña requerida');
         return false;
     } else if (!regexPassword.test(password)) {
-        passwordInput.classList.add('input--danger');
-        messageError.style.display = 'block';
-        messageError.textContent = 'Formato incorrecto';
+        setError(passwordInput, 'Formato incorrecto');
         return false;
     }
 
@@ -52,6 +43,19 @@ const validatePasswordInput = () => {
     messageError.style.display = 'none';
     messageError.textContent = '';
     return true;
+}
+
+// Creamos una funcion para marcar el error
+const setError = (input, message) => {
+    // Marcamos el input
+    input.classList.add('input--danger');
+    // Mostramos mensaje
+    showError(message);
+}
+
+const showError = (message) => {
+    messageError.style.display = 'block';
+    messageError.textContent = message;
 }
 
 // Hacemos el submit del formulario cuando todo sea valido
