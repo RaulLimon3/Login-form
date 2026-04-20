@@ -31,19 +31,34 @@ const validateUserNameInput = () => {
     messageError.textContent = '';
     return true;
 }
+
 // Validamos el campo de password (vacio, formato correcto y pierde el enfoque)
+const validatePasswordInput = () => {
+    const password = passwordInput.value.trim();
+    const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{7,}$/;
+    if (password === '') {
+        passwordInput.classList.add('input--danger');
+        messageError.style.display = 'block';
+        messageError.textContent = 'Contraseña requerida';
+        return false;
+    } else if (!regexPassword.test(password)) {
+        passwordInput.classList.add('input--danger');
+        messageError.style.display = 'block';
+        messageError.textContent = 'Formato incorrecto';
+        return false;
+    }
+
+    passwordInput.classList.remove('input--danger');
+    messageError.style.display = 'none';
+    messageError.textContent = '';
+    return true;
+}
 
 // Hacemos el submit del formulario cuando todo sea valido
 form.addEventListener('submit', (e) => {
     // Evitamos que el formulario se envie
     e.preventDefault();
 
-    // Validamos el campo del usuario
-    const validateUser = validateUserNameInput();
-    if (validateUser) {
-        return;
-    }
-    
     // Validamos cuando ambos campos esten vacios (Mostrar mensaje unico)
     if (userNameInput.value.trim() === '' && passwordInput.value.trim() === '') {
         // Marcamos los compos en rojo
@@ -52,7 +67,17 @@ form.addEventListener('submit', (e) => {
         // Mostramos el mensaje al usuario
         messageError.style.display = 'block';
         messageError.textContent = 'Por favor llena los campos';
+        // Detenemos el envio
+        return;
     }
+
+    // Validamos el campo del usuario
+    if (!validateUserNameInput()) return;
+
+    // Validamos el campo de la contraseña
+    if (!validatePasswordInput()) return;
+
+    console.log('Formulario enviado');
 });
 
 
