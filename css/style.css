@@ -46,7 +46,6 @@ a {
 .main {
     min-height: 100vh;
     width: 100%;
-    /* max-width: 1200px; */
     margin: 0 auto;
     display: grid;
     grid-template-rows: auto 1fr;
@@ -282,7 +281,8 @@ a {
 
 .google-link:hover {
     background: #fff;
-    outline: 1px solid transparent;;
+    outline: 1px solid transparent;
+    ;
 }
 
 .google-link:active {
@@ -295,8 +295,7 @@ a {
             #4285F4 0% 25%,
             #EA4335 25% 50%,
             #FBBC05 50% 75%,
-            #34A853 75% 100%
-        );
+            #34A853 75% 100%);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -311,11 +310,66 @@ a {
     font-weight: 600;
 }
 
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+    z-index: 2;
+}
+
+.modal-content {
+    background: #e9ecef;
+    width: 80%;
+    max-width: 500px;
+    padding: 30px;
+    min-height: 200px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.modal-icon {
+    background: #61881c;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #e9ecef;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.success {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.modal--active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 @media screen and (min-width: 768px) {
     .main {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
     }
+
     .form-section {
         justify-content: center;
     }
