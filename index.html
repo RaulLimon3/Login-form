@@ -5,14 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
-    <!-- Icons -->
     <script src="https://kit.fontawesome.com/59b162e155.js" crossorigin="anonymous"></script>
-    <!-- Styles -->
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/main.js" defer></script>
 </head>
 
 <body>
@@ -21,8 +19,9 @@
             <img class="image" src="./public/img/Login-img.png" alt="Login image">
         </section>
         <section class="container form-section">
-            <form action="#" id="form" class="form">
+            <form id="form" class="form">
                 <h1 class="form-title">Login</h1>
+                <span id="message" class="message"></span>
                 <div class="input-field">
                     <input class="input" type="text" name="username" id="username" autocomplete="username">
                     <label class="label" for="username">Username</label>

@@ -93,6 +93,13 @@ a {
     font-size: 2.125rem;
 }
 
+.message {
+    display: none;
+    background: #780000;
+    color: #e9ecef;
+    border-radius: 5px;
+}
+
 .input-field {
     width: 100%;
     position: relative;
