@@ -5,9 +5,7 @@ const passwordInput = document.getElementById('password');
 const messageError = document.getElementById('message');
 
 // Validamos el campo del username (vacio, formato correcto y pierde el enfoque)
-const validateUserNameInput = () => {
-    // Extraemos el valor del campo
-    const username = userNameInput.value.trim();
+const validateUserNameInput = (username) => {
     // Establecemos el formato
     const regexUserName = /^[a-zA-Z0-9_.]{3,20}$/;
     // Validamos que vacio
@@ -26,8 +24,7 @@ const validateUserNameInput = () => {
 }
 
 // Validamos el campo de password (vacio, formato correcto y pierde el enfoque)
-const validatePasswordInput = () => {
-    const password = passwordInput.value.trim();
+const validatePasswordInput = (password) => {
     const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{7,}$/;
     if (password === '') {
         setError(passwordInput, 'Contraseña requerida');
@@ -66,8 +63,12 @@ form.addEventListener('submit', (e) => {
     // Evitamos que el formulario se envie
     e.preventDefault();
 
+    // Extraemos el valor de los inputs
+    const username = userNameInput.value.trim();
+    const password = passwordInput.value.trim();
+
     // Validamos cuando ambos campos esten vacios (Mostrar mensaje unico)
-    if (userNameInput.value.trim() === '' && passwordInput.value.trim() === '') {
+    if (username === '' && password === '') {
         // Marcamos los compos en rojo
         userNameInput.classList.add('input--danger');
         passwordInput.classList.add('input--danger');
@@ -79,10 +80,10 @@ form.addEventListener('submit', (e) => {
     }
 
     // Validamos el campo del usuario
-    if (!validateUserNameInput()) return;
+    if (!validateUserNameInput(username)) return;
 
     // Validamos el campo de la contraseña
-    if (!validatePasswordInput()) return;
+    if (!validatePasswordInput(password)) return;
 
     console.log('Formulario enviado');
 });
