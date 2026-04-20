@@ -339,6 +339,31 @@ a {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    transform: scale(0.7);
+    opacity: 0;
+}
+
+@keyframes bubblePop {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    80% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.modal--active .modal-content {
+    transform: scale(1);
+    opacity: 1;
+    animation: bubblePop 0.4s ease;
 }
 
 .modal-icon {
@@ -352,6 +377,57 @@ a {
     color: #e9ecef;
     border-radius: 50%;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transform: scale(0);
+}
+
+@keyframes iconPop {
+    0% {
+        transform: scale(0);
+    }
+    60% {
+        transform: scale(1.2);
+    }
+    80% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.modal--active .modal-icon {
+    animation: iconPop 0.3s ease;
+    animation-delay: 0.25s;
+    animation-fill-mode: forwards;
+}
+
+.check {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+@keyframes checkAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    80% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal--active .check {
+    animation: checkAppear 0.3s ease;
+    animation-delay: 0.45s;
+    animation-fill-mode: forwards;
 }
 
 .success {
