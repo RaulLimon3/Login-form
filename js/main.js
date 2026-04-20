@@ -58,6 +58,21 @@ const cleanError = (input) => {
     messageError.textContent = '';
 }
 
+// Mostramos nuestro modal
+let modalTimeout;
+const showSuccessModal = () => {
+    // Accedemos a nuestro elemento
+    const modal = document.querySelector('.modal');
+    // Activamos la clase
+    modal.classList.add('modal--active');
+    // Limpiamos el tiempo
+    clearTimeout(modalTimeout);
+    // Cerramos despues de 2.5 segundos
+    modalTimeout = setTimeout(() => {
+        modal.classList.remove('modal--active');
+    }, 2500);
+};
+
 // Hacemos el submit del formulario cuando todo sea valido
 form.addEventListener('submit', (e) => {
     // Evitamos que el formulario se envie
@@ -85,6 +100,8 @@ form.addEventListener('submit', (e) => {
     // Validamos el campo de la contraseña
     if (!validatePasswordInput(password)) return;
 
+    // Confirmamos ingreso
+    showSuccessModal();
     console.log('Formulario enviado');
 
     // Limpiamos el formulario
