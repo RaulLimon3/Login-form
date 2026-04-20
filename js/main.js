@@ -21,9 +21,7 @@ const validateUserNameInput = () => {
     }
 
     // Quitamos el mensaje
-    userNameInput.classList.remove('input--danger');
-    messageError.style.display = 'none';
-    messageError.textContent = '';
+    cleanError(userNameInput);
     return true;
 }
 
@@ -39,9 +37,7 @@ const validatePasswordInput = () => {
         return false;
     }
 
-    passwordInput.classList.remove('input--danger');
-    messageError.style.display = 'none';
-    messageError.textContent = '';
+    cleanError(passwordInput);
     return true;
 }
 
@@ -56,6 +52,13 @@ const setError = (input, message) => {
 const showError = (message) => {
     messageError.style.display = 'block';
     messageError.textContent = message;
+}
+
+// Creamos una funcion para limpiar error
+const cleanError = (input) => {
+    input.classList.remove('input--danger');
+    messageError.style.display = 'none';
+    messageError.textContent = '';
 }
 
 // Hacemos el submit del formulario cuando todo sea valido
